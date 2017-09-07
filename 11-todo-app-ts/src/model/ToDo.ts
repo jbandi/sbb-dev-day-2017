@@ -1,4 +1,4 @@
 export interface ToDo {
     id: number;
-    title: string;
+    title2: string;
 }

@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { SyntheticEvent } from 'react';
 
-// import PropTypes from 'prop-types';
+interface NewToDoProps {
+    onAddToDo(text: string): void;
+}
 
-class NewToDo extends React.Component<{ onAddToDo(text: string): void }> {
+class NewToDo extends React.Component<NewToDoProps> {
 
-    // static propTypes = {
-    //     onAddToDo: PropTypes.func.isRequired
-    // };
     newToDoText: HTMLInputElement;
 
     render() {

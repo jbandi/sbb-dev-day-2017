@@ -4,9 +4,11 @@ import TodoList from './TodoList';
 import NewToDo from './NewToDo';
 import { ToDo } from '../model/ToDo';
 
-class App extends React.Component {
+interface AppState { todos: ToDo[]; }
 
-    state = {
+class App extends React.Component<{}, AppState> {
+
+    state: AppState = {
         // todos: ['Learn React', 'Learn Angular', 'Learn VueJS'],
         todos: [],
     };
@@ -44,7 +46,7 @@ class App extends React.Component {
 
     addToDo = (newToDoText: string) => {
 
-        const newToDo = {title: newToDoText, completed: false};
+        const newToDo = {id: 123, title: newToDoText, completed: false};
         const newTodos = [...this.state.todos, newToDo];
         this.setState({todos: newTodos});
         axios.post('http://localhost:3456/todos', newToDo)

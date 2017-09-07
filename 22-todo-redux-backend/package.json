@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "json-server --static ./build db.json",
-    "dev": "react-scripts start",
+    "dev": "PORT=3009 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
